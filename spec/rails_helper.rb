@@ -1,3 +1,3 @@
 RSpec.configure do |config|
-  config.use_transactional_fixtures = true
+  config.include Devise::Test::IntegrationHelpers, type: :request
 end
