@@ -1,7 +1,16 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github]
+  has_many :user_roles
+  has_many :roles, through: :user_roles
+end
 
-  has_many :posts, dependent: :destroy
+# app/models/role.rb
+class Role < ApplicationRecord
+  has_many :user_roles
+  has_many :users, through: :user_roles
+end
+
+# app/models/user_role.rb
+class UserRole < ApplicationRecord
+  belongs_to :user
+  belongs_to :role
 end
