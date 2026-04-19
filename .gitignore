@@ -1,0 +1,13 @@
+# Rails 민감 파일
+config/master.key
+config/credentials/*.key
+
+# 빌드/임시 파일
+*.log
+tmp/
+.bundle/
+vendor/bundle/
+
+# 운영 환경
+.env
+.env.*
