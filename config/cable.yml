@@ -1,0 +1,10 @@
+development:
+  adapter: async  # 개발 환경: 인메모리 어댑터
+
+test:
+  adapter: test
+
+production:
+  adapter: solid_cable  # 프로덕션: DB 기반 어댑터
+  polling_interval: 0.1.seconds
+  message_retention: 1.day

@@ -1,0 +1,7 @@
+proxy:
+  ssl: true
+  host: myapp.example.com
+  healthcheck:
+    path: /up
+    interval: 3    # 3초마다 체크
+    timeout: 3     # 3초 내 응답해야 통과
